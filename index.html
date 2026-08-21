@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.S Collections | Premium Fashion Showroom — Tandur</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #FAFAFA;
+            --bg-card: #FFFFFF;
+            --text-dark: #121212;
+            --text-muted: #666666;
+            --accent-gold: #C5A059;
+            --accent-gold-hover: #B08D46;
+            --border-light: #EAEAEA;
+            --shadow-subtle: 0 10px 30px rgba(0,0,0,0.04);
+            --font-title: 'Cinzel', serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-bottom: 70px;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(250, 250, 250, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-light);
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            font-family: var(--font-title);
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .hero {
+            position: relative;
+            padding: 6rem 1.5rem 5rem;
+            text-align: center;
+            background: linear-gradient(180deg, #FFFFFF 0%, #FAFAFA 100%);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-family: var(--font-title);
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            line-height: 1.2;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-gold);
+            color: #FFFFFF;
+            padding: 0.9rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: background 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-gold-hover);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-dark);
+            border: 1px solid var(--text-dark);
+            padding: 0.9rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--text-dark);
+            color: #FFFFFF;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 1.5rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-header .subtitle {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-title);
+            font-size: 2rem;
+            letter-spacing: 1px;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 6px;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow-subtle);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+        }
+
+        .card h3 {
+            font-family: var(--font-title);
+            font-size: 1.3rem;
+            margin-bottom: 0.6rem;
+            letter-spacing: 1px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0.3rem 0.8rem;
+            background: #F4F4F4;
+            color: var(--text-dark);
+            border-radius: 3px;
+        }
+
+        .store-banner {
+            background-color: #121212;
+            color: #FFFFFF;
+            border-radius: 8px;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .store-banner h2 {
+            font-family: var(--font-title);
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: #FFFFFF;
+        }
+
+        .store-banner p {
+            color: #BBBBBB;
+            max-width: 650px;
+            margin: 0 auto 2rem;
+            font-size: 1.05rem;
+        }
+
+        .visit-box {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 2rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-subtle);
+            align-items: stretch;
+        }
+
+        .visit-info h3 {
+            font-family: var(--font-title);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .address-line {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .timings {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #F9F9F9;
+            border-left: 3px solid var(--accent-gold);
+            font-size: 0.95rem;
+        }
+
+        .map-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 320px;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+        }
+
+        .map-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .mobile-quick-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #FFFFFF;
+            border-top: 1px solid var(--border-light);
+            padding: 0.75rem 1rem;
+            z-index: 200;
+            box-shadow: 0 -4px 15px rgba(0,0,0,0.08);
+        }
+
+        .mobile-quick-bar .bar-inner {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .mobile-quick-bar a {
+            flex: 1;
+            text-align: center;
+            padding: 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .bar-directions {
+            background-color: var(--accent-gold);
+            color: #FFFFFF;
+        }
+
+        .bar-whatsapp {
+            background-color: #25D366;
+            color: #FFFFFF;
+        }
+
+        @media (max-width: 860px) {
+            .nav-links { display: none; }
+            .visit-box { grid-template-columns: 1fr; padding: 1.5rem; }
+            .map-wrapper { min-height: 280px; }
+            .mobile-quick-bar { display: block; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="brand-logo">S.S COLLECTIONS</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#collections">Collections</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#visit">Visit Showroom</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero">
+        <span class="hero-badge">Exclusive Fashion Showroom</span>
+        <h1>Fashion • Style • Elegance</h1>
+        <p>Discover contemporary ready-made wear and curated collections. Explore styles in person at our Tandur showroom.</p>
+        <div class="hero-actions">
+            <a href="#visit" class="btn-primary">Get Store Directions</a>
+            <a href="#collections" class="btn-secondary">View Showcase</a>
+        </div>
+    </section>
+
+    <div class="container" id="collections">
+        <div class="section-header">
+            <div class="subtitle">Curated In-Store</div>
+            <h2>Our Collections</h2>
+        </div>
+        <div class="grid-cards">
+            <div class="card">
+                <h3>MEN</h3>
+                <p>Everyday essentials, ethnic festive wear, and modern casuals.</p>
+                <span class="card-tag">Available In-Store</span>
+            </div>
+            <div class="card">
+                <h3>WOMEN</h3>
+                <p>Contemporary ethnic elegance, daily wear, and festive collections.</p>
+                <span class="card-tag">Available In-Store</span>
+            </div>
+            <div class="card">
+                <h3>KIDS</h3>
+                <p>Comfortable, premium fabric designs for celebrations and daily wear.</p>
+                <span class="card-tag">Available In-Store</span>
+            </div>
+            <div class="card">
+                <h3>NEW ARRIVALS</h3>
+                <p>Fresh handpicked seasonal styles arriving regularly at the showroom.</p>
+                <span class="card-tag">Fresh Stock</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="experience" style="padding-top: 0;">
+        <div class="store-banner">
+            <h2>Experience The Collection In Person</h2>
+            <p>We believe great style starts with the right fit and fabric feel. Step into our Tandur showroom to try on your favorite looks and enjoy personalized service.</p>
+            <a href="#visit" class="btn-primary">Plan Your Visit</a>
+        </div>
+    </div>
+
+    <div class="container" id="visit" style="padding-top: 0;">
+        <div class="visit-box">
+            <div class="visit-info">
+                <div class="subtitle" style="color: var(--accent-gold); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;">Find Us</div>
+                <h3>S.S Collections</h3>
+                <div class="address-line">
+                    Gandhi Chowk / Brindavan Colony<br>
+                    Tandur – 501141<br>
+                    Vikarabad District, Telangana
+                </div>
+                <div class="timings">
+                    <strong>Showroom Timings:</strong><br>
+                    Monday – Sunday: 10:00 AM – 10:00 PM
+                </div>
+                <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+                    <a href="https://maps.google.com/?cid=3718168796632200754" target="_blank" class="btn-primary" style="font-size: 0.85rem; padding: 0.7rem 1.4rem;">Open in Maps App</a>
+                    <a href="https://wa.me/919848646757?text=Hi%20S.S%20Collections,%20I%20would%20like%20to%20inquire%20about%20your%20latest%20in-store%20collection." target="_blank" class="btn-secondary" style="font-size: 0.85rem; padding: 0.7rem 1.4rem;">WhatsApp Us</a>
+                </div>
+            </div>
+            <div class="map-wrapper">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d476.2798880519275!2d77.58338697709699!3d17.255663376774777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc96ac03fd304e1%3A0x339996d222343632!2sSS%20Collections!5e0!3m2!1sen!2sin!4v1787307085600!5m2!1sen!2sin" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-quick-bar">
+        <div class="bar-inner">
+            <a href="https://maps.google.com/?cid=3718168796632200754" target="_blank" class="bar-directions">📍 Directions</a>
+            <a href="https://wa.me/919848646757?text=Hi%20S.S%20Collections,%20I%20would%20like%20to%20inquire%20about%20your%20latest%20in-store%20collection." target="_blank" class="bar-whatsapp">💬 WhatsApp</a>
+        </div>
+    </div>
+
+</body>
+</html>
