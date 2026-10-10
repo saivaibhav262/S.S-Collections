@@ -755,6 +755,61 @@
 
   <!-- JAVASCRIPT -------------------------------------------------------------------------------------------------------------------------------------->
   <script src="script.js"></script>
+  
+<!-- Festive Collection Popup -->
+<div id="welcome-popup" class="welcome-popup">
+  <div class="popup-content festive-popup">
+    <button class="popup-close" id="close-popup"
+      aria-label="Close popup">&times;</button>
+
+    <p class="popup-label">✨ FESTIVE SEASON ✨</p>
+
+    <h2>S.S Collections</h2>
+
+    <div class="popup-line"></div>
+
+    <h3>Festive Collections Are Here!</h3>
+
+    <p class="popup-message">
+      Celebrate every special moment in style.
+      Discover beautiful collections for the
+      whole family at prices you'll love.
+    </p>
+
+    <p class="festive-highlight">
+      Your Style. Your Celebration.
+    </p>
+
+    <button id="explore-store" class="popup-button">
+      Explore Our Collections
+    </button>
+  </div>
+</div>
+
+<script>
+  const popup = document.getElementById("welcome-popup");
+  const closeBtn = document.getElementById("close-popup");
+  const exploreBtn = document.getElementById("explore-store");
+
+  window.addEventListener("load", function () {
+    popup.classList.add("show");
+  });
+
+  closeBtn.addEventListener("click", function () {
+    popup.classList.remove("show");
+  });
+
+  exploreBtn.addEventListener("click", function () {
+    popup.classList.remove("show");
+  });
+
+  popup.addEventListener("click", function (event) {
+    if (event.target === popup) {
+      popup.classList.remove("show");
+    }
+  });
+</script>
+</body>
 
 </body>
 </html>
